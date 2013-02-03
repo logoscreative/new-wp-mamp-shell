@@ -19,3 +19,8 @@ From my <a href="http://logos-creative.com/roll-a-new-mamp-wordpress-install-qui
 > 1. Generates my <a href="http://codex.wordpress.org/Editing_wp-config.php#Security_Keys" target="_blank">security keys</a> and adds them to `wp-config.php`
 > 1. Adds my database name, username, and password to `wp-config.php`
 > 1. Opens up `wp-admin/install.php` to lets me complete installation
+
+FAQ
+-----------------
+
+Getting _fatal: could not create work tree dir..._ or having other permissions-related issues? Put `sudo` in front of the path to the script before running it.
