@@ -30,5 +30,6 @@ DBNAME=$"local_db_name"
 sed -i '' -e "s/${DBUSER}/${MYSQLUSER}/g" local-config.php
 sed -i '' -e "s/${DBPASS}/${MYSQLPWD}/g" local-config.php
 sed -i '' -e "s/${DBNAME}/${NEWDB}/g" local-config.php
+echo "define( 'WP_CONTENT_URL', 'http://' . \$_SERVER['HTTP_HOST'] . '/$NEWDIR/content' );" >> local-config.php
 open http://localhost:8888/$NEWDIR/wp/wp-admin/install.php
 fi
