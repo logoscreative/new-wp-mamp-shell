@@ -16,9 +16,9 @@ printf "What would you like to name your new database (i.e. newwpdb)? "
 read NEWDB
 echo "CREATE DATABASE $NEWDB; GRANT ALL ON $NEWDB.* TO '$MYSQLUSER'@'localhost';" | ../../Library/bin/mysql -u$MYSQLUSER -p$MYSQLPWD
 
-if [ -f ./wp-config.php ]
+if [ -f ./local-config.php ]
 then
-open http://localhost:8888/$NEWDIR/wp-admin/install.php
+open http://localhost:8888/$NEWDIR/wp/wp-admin/install.php
 else
 cp -n ./local-config-sample.php ./local-config.php
 SECRETKEYS=$(curl -L https://api.wordpress.org/secret-key/1.1/salt/)
@@ -30,5 +30,5 @@ DBNAME=$"local_db_name"
 sed -i '' -e "s/${DBUSER}/${MYSQLUSER}/g" local-config.php
 sed -i '' -e "s/${DBPASS}/${MYSQLPWD}/g" local-config.php
 sed -i '' -e "s/${DBNAME}/${NEWDB}/g" local-config.php
-open http://localhost:8888/$NEWDIR/wp-admin/install.php
+open http://localhost:8888/$NEWDIR/wp/wp-admin/install.php
 fi

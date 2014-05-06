@@ -1,7 +1,7 @@
-New MAMP WordPress Install via Shell
+New MAMP WordPress Skeleton via Shell
 =================
 
-Roll a new WordPress installation for MAMP with this quick shell script (allows custom inputs for directory, database name, and WP version).
+Roll a new WordPress Skeleton (forked from [Mark Jaquith's original](https://github.com/markjaquith/WordPress-Skeleton)) for MAMP with this quick shell script (allows custom inputs for directory and database name).
 
 Assuming you have MAMP installed in `/Applications/MAMP/htdocs`:
 
@@ -19,6 +19,8 @@ From my <a href="http://logos-creative.com/roll-a-new-mamp-wordpress-install-qui
 > 1. Generates my <a href="http://codex.wordpress.org/Editing_wp-config.php#Security_Keys" target="_blank">security keys</a> and adds them to `wp-config.php`
 > 1. Adds my database name, username, and password to `wp-config.php`
 > 1. Opens up `wp-admin/install.php` to lets me complete installation
+
+For this branch that checks out the "skeleton", local database information is put into a `local-config.php` file, which is automatically ignored by Git.
 
 FAQ
 -----------------
